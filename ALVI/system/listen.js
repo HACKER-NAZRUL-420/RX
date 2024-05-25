@@ -7,7 +7,7 @@ require("./handle/handleNotification.js")({ api });
 const Users = require("./controllers/users")({ models, api }),
 Threads = require("./controllers/threads")({ models, api }),
 Currencies = require("./controllers/currencies")({ models });
-const logger = require("../catalogs/alvic.js");
+const logger = require("../catalogs/nazrulc.js");
 const chalk = require("chalk");
 const gradient= require("gradient-string");
 const crayon = gradient('yellow', 'lime', 'green');
@@ -51,7 +51,7 @@ const sky = gradient('#3446eb', '#3455eb', '#3474eb');
 					global.data.commandBanned.set(idUsers, dataU.data.commandBanned);
 				}
 			});
-			global.loading(`deployed ${chalk.blueBright(`${global.data.allThreadID.length}`)} groups and ${chalk.blueBright(`${global.data.allUserID.length}`)} users\n\n${chalk.blueBright(`X2 PROJECT VERSION 4.0.0`)}\n`, "• X2 DATA •");
+			global.loading(`deployed ${chalk.blueBright(`${global.data.allThreadID.length}`)} groups and ${chalk.blueBright(`${global.data.allUserID.length}`)} users\n\n${chalk.blueBright(`X4 PROJECT VERSION 4.0.0`)}\n`, "• X4 DATA •");
 		} catch (error) {
 			logger.loader(`can't load environment variable, error : ${error}`, 'error');
 		}
@@ -61,12 +61,12 @@ const operator = global.config.OPERATOR.length;
 const admin = global.config.ADMINBOT.length;
 const approved = global.approved.APPROVED.length;
 const premium = global.premium.PREMIUMUSERS.length;
-console.log(`${crayon(``)}${sky(`• X2 DATA •`)} - bot name : ${chalk.blueBright((!global.config.BOTNAME) ? "Alvi" : global.config.BOTNAME)} \n${sky(`• X2 DATA •`)} - bot id : ${chalk.blueBright(api.getCurrentUserID())} \n${sky(`• X2 DATA •`)} - bot prefix : ${chalk.blueBright(global.config.PREFIX)}\n${sky(`• X2 DATA •`)} - deployed ${chalk.blueBright(operator)} bot operators and ${chalk.blueBright(admin)} admins`);
+console.log(`${crayon(``)}${sky(`• X4 DATA •`)} - bot name : ${chalk.blueBright((!global.config.BOTNAME) ? "Nazrul" : global.config.BOTNAME)} \n${sky(`• X4 DATA •`)} - bot id : ${chalk.blueBright(api.getCurrentUserID())} \n${sky(`• X4 DATA •`)} - bot prefix : ${chalk.blueBright(global.config.PREFIX)}\n${sky(`• X4 DATA •`)} - deployed ${chalk.blueBright(operator)} bot operators and ${chalk.blueBright(admin)} admins`);
 if (global.config.approval) {
-  console.log(`${sky(`• X2 DATA •`)} - deployed ${chalk.blueBright(approved)} approved groups`)
+  console.log(`${sky(`• X4 DATA •`)} - deployed ${chalk.blueBright(approved)} approved groups`)
 } 
 if (global.config.premium) {
-  console.log(`${sky(`• X2 DATA •`)} - deployed ${chalk.blueBright(premium)} premium users`)
+  console.log(`${sky(`• X4 DATA •`)} - deployed ${chalk.blueBright(premium)} premium users`)
 }
 
 const handleCommand = require("./handle/handleCommand.js")({ api, Users, Threads, Currencies, models });
