@@ -65,7 +65,7 @@ global.data = new Object({
   allCurrenciesID: new Array(),
   allThreadID: new Array(),
 });
-global.utils = require("./alvid.js");
+global.utils = require("./nazruld.js");
 global.loading = require("./alvic.js");
 global.nodemodule = new Object();
 global.config = new Object();
