@@ -2,14 +2,14 @@ const { readdirSync, readFileSync, writeFileSync } = require("fs-extra");
 const { join, resolve } = require('path')
 const { execSync } = require('child_process');
 const axios = require('axios')
-const config = require("../../Alvi.json");
+const config = require("../../Nazrul.json");
 const chalk = require("chalk");
 const listPackage = JSON.parse(readFileSync('../../package.json')).dependencies;
 const packages = JSON.parse(readFileSync('../../package.json'));
 const fs = require("fs");
 const login = require('../system/login/index.js');
 const moment = require("moment-timezone");
-const logger = require("./alvic.js");
+const logger = require("./nazrulc.js");
 const gradient = require("gradient-string");
 const process = require("process");
 const listbuiltinModules = require("module").builtinModules;
@@ -104,7 +104,7 @@ try {
 }
 var ryukoValue;
 try {
-  global.client.ryukoPath = join(global.client.mainPath, "../configs/Alvi.json");
+  global.client.ryukoPath = join(global.client.mainPath, "../configs/Nazrul.json");
   ryukoValue = require(global.client.ryukoPath);
 } catch (e) {
   return;
@@ -118,15 +118,15 @@ var configValue;
 try {
   global.client.configPath = join(global.client.mainPath, "../../Alvi.json");
   configValue = require(global.client.configPath);
-  logger.loader(`deploying ${chalk.blueBright('ALVI')} file`);
+  logger.loader(`deploying ${chalk.blueBright('NAZRUL')} file`);
 } catch (e) {
-  return logger.loader(`cant read ${chalk.blueBright('ALVI')} file`, "error");
+  return logger.loader(`cant read ${chalk.blueBright('NAZRUL')} file`, "error");
 }
 try {
   for (const key in configValue) global.config[key] = configValue[key];
-  logger.loader(`deployed ${chalk.blueBright('ALVI')} file`);
+  logger.loader(`deployed ${chalk.blueBright('NAZRUL')} file`);
 } catch (e) {
-  return logger.loader(`can't deploy ${chalk.blueBright('ALVI')} file`, "error")
+  return logger.loader(`can't deploy ${chalk.blueBright('NAZRUL')} file`, "error")
 }
 
 var approvedListsValue;
@@ -210,21 +210,21 @@ global.getText = function(...args) {
 
 try {
   if (!global.config.BOTNAME) {
-    logger.error(`please enter your bot name in ${chalk.blueBright('Alvi.json')} file`);
+    logger.error(`please enter your bot name in ${chalk.blueBright('Nazrul.json')} file`);
     process.exit(0);
   }
   if (!global.config.PREFIX) {
-    logger.error(`please enter your bot prefix in ${chalk.blueBright('Alvi.json')} file`)
+    logger.error(`please enter your bot prefix in ${chalk.blueBright('Nazrul.json')} file`)
   }
-  if (global.config.author != "ALVI") {
-    logger.error(`detected : author was changed at ${chalk.blueBright('Alvi.json')}`);
+  if (global.config.author != "NAZRUL") {
+    logger.error(`detected : author was changed at ${chalk.blueBright('Nazrul.json')}`);
     process.exit(0);
   }
-  if (packages.author != "ALVI") {
+  if (packages.author != "NAZRUL") {
     logger.error(`detected : author was changed at ${chalk.blueBright('package.json')}`);
     process.exit(0);
   }
-  if (packages.name != "ALVI") {
+  if (packages.name != "NAZRUL") {
     logger.error(`detected : project name was changed at ${chalk.blueBright('package.json')}`);
     process.exit(0);
   }
@@ -233,7 +233,7 @@ try {
 }
 
 try {
-  var appStateFile = resolve(join(global.client.mainPath, "../../Alvistate.json"));
+  var appStateFile = resolve(join(global.client.mainPath, "../../Nazrulstate.json"));
   var appState = ((process.env.REPL_OWNER || process.env.PROCESSOR_IDENTIFIER) && (fs.readFileSync(appStateFile, 'utf8'))[0] != "[" && ryuko.encryptSt) ? JSON.parse(global.utils.decryptState(fs.readFileSync(appStateFile, 'utf8'), (process.env.REPL_OWNER || process.env.PROCESSOR_IDENTIFIER))) : require(appStateFile);
   logger.loader(`deployed ${chalk.blueBright('x2state')} file`)
 } catch (e) {
@@ -278,7 +278,7 @@ function onBot({ models: botModel }) {
                 continue;
               }
             }
-            const configures = require(`../../Alvi.json`);
+            const configures = require(`../../Nazrul.json`);
             if (configures.premium) {
               if (!config?.hasOwnProperty('premium')) {
                 console.log(`• HEY X2 • `, chalk.hex("#ff0000")(command) + ` does not have the "premium" property.`);
@@ -418,7 +418,7 @@ function onBot({ models: botModel }) {
 
         }
       })();
-    console.log(chalk.blue(`\n` + `• X2 DEPLOYING X2BOT DATA •`));
+    console.log(chalk.blue(`\n` + `• X2 NAZRUL X2BOT DATA •`));
     global.loading(`${crayon(``)}deployed ${chalk.blueBright(`${global.client.commands.size}`)} commands and ${chalk.blueBright(`${global.client.events.size}`)} events`, "• X2 DATA •");
     global.loading(`${crayon(``)}deployed time : ${chalk.blueBright(((Date.now() - global.client.timeStart) / 1000).toFixed() + 's')}`, "• X2 DATA •");
     const listenerData = {};
