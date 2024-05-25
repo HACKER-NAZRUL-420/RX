@@ -1,14 +1,14 @@
 {
-    "name": "ALVI",
+    "name": "NAZRUL",
     "version": "4.0.0",
     "description": "simple messenger bot",
     "main": "",
     "scripts": {
-        "start": "node --trace-warnings --use_strict --async-stack-traces ALVI/catalogs/alvia.js",
+        "start": "node --trace-warnings --use_strict --async-stack-traces NAZRUL/catalogs/nazrula.js",
         "login": "node login",
         "test": "node --trace-warnings --use_strict --async-stack-traces main"
     },
-    "author": "ALVI",
+    "author": "NAZRUL",
     "license": "GPL-3.0",
     "dependencies": {
         "aes-js": "latest",
