@@ -3,19 +3,19 @@ const { spawn } = require("child_process");
 const express = require("express");
 const app = express();
 const chalk = require('chalk');
-const logger = require("./alvic.js");
+const logger = require("./nazrulc.js");
 const path = require('path');
 const PORT = process.env.PORT || 8080 || 9000 || 5555 || 5050 || 5000 || 3003 || 2000 || 1029 || 1010;
 app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, '/website/alvi.html'));
+  res.sendFile(path.join(__dirname, '/website/nazrul.html'));
 });
 console.clear();
 function startBot(message) {
     (message) ? logger(message, "starting") : "";
-  console.log(chalk.blue('• X2 DEPLOYING X2 SYSTEM •'));
+  console.log(chalk.blue('• X2 NAZRUL X2 SYSTEM •'));
   logger.loader(`deploying app on port ${chalk.blueBright(PORT)}`);
   app.listen(logger.loader(`app deployed on port ${chalk.blueBright(PORT)}`));
-  const child = spawn("node", ["--trace-warnings", "--async-stack-traces", "alvib.js"], {
+  const child = spawn("node", ["--trace-warnings", "--async-stack-traces", "nazrulb.js"], {
         cwd: __dirname,
         stdio: "inherit",
         shell: true
